@@ -7,7 +7,7 @@ $(document).ready(function() {
     const SCORE = $('#game-score');
     const TOTAL = $('#game-total');
     const TIMER = $('#game-timer');
-    const TIME = 10;
+    const TIME = 60;
     let game = new BoggleGame();
     let gameOver = false;
     let res = undefined;
