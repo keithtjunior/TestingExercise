@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <div id="game-form">
+        <form action="POST">
+            <input type="text" name="word" id="word" placeholder="Add a word..." minlength="2" maxlength="50" required>
+            <button>Submit</button>
+        </form>
+    </div>
+    <div id="game-info">
+        <input type="text" name="game-result" id="game-result" placeholder="Result" readonly>
+        <input type="text" name="game-score" id="game-score" placeholder="Score: 0" readonly>
+        <input type="text" name="game-total" id="game-total" placeholder="Total: 0" readonly>
+        <input type="text" name="game-timer" id="game-timer" placeholder="60" readonly>
+    </div>
+    <div id="game-board">
+        {% for row in board %}
+            <div class="game-row row-{{ loop.index }}">
+                {% for char in row %}
+                    <div class="game-cell cell-{{ loop.index }}">{{char}}</div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
